@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="bg-success">
+          <h2 class="text-center p-3 text-white">CASH TRACKER</h2>
+        </div>
+        <div class="p-3 bg-dark">
+          <h3 class="text-white text-center">DASHBOARD</h3>
+          <div class="row p-3 bg-light">
+            <div class="col-md-2 text-md-center">
+              <h5>Currency</h5>
+              <p>Naira</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+              <h5>Income</h5>
+              <span id="dashboard-total"></span>
+            </div>
+            <div class="col-md-3 text-md-center">
+              <h5>Available Balance</h5>
+              <span id="available-bal"></span>
+            </div>
+            <div class="col-md-4 text-md-center">
+              <canvas
+                id="myChart"
+                style="width: 100%; max-width: 400px"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+        
+      </header>
+
+      <div class="container bg-dark p-3">
+        <nav class="">
+          <div class="p-3 my-3 bg-warning">
+            <h3 class="text-center">ADD ITEMS</h3>
+          </div>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button
+              class="nav-link active text-warning"
+              id="nav-home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-home"
+              type="button"
+              role="tab"
+              aria-controls="nav-home"
+              aria-selected="true"
+            >
+              Income
+            </button>
+            <button
+              class="nav-link text-warning"
+              id="nav-profile-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-profile"
+              type="button"
+              role="tab"
+              aria-controls="nav-profile"
+              aria-selected="false"
+            >
+              Expense
+            </button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active bg-warning px-5 pt-3"
+            id="nav-home"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"
+          >
+            <div class="d-flex justify-content-between">
+              <div class="">Desc</div>
+              <div>Amount</div>
+            </div>
+            <ul class="all-income bg-warning">
+        
+            </ul>
+          </div>
+          <div
+            class="tab-pane fade bg-warning px-5 pt-3"
+            id="nav-profile"
+            role="tabpanel"
+            aria-labelledby="nav-profile-tab"
+          >
+            <div class="d-flex justify-content-between">
+              <div class="px-2">Desc</div>
+              <div>Amount</div>
+            </div>
+            <ul class="all-expense bg-warning">
+              
+            </ul>
+          </div>
+          <div class="mt-5 bg-warning p-3 row">
+            <div class="col-md-3">
+              <label
+                >Title:
+                <input
+                  type="text"
+                  class="border-0 bg-transparent input"
+                  placeholder="Title"
+                  id="input-title"
+                />
+              </label>
+            </div>
+            <div class="col-md-3">
+              <label
+                >Amount:
+                <input
+                  type="number"
+                  class="border-0 bg-transparent input"
+                  placeholder="Amount"
+                  id="input-amount"
+                />
+              </label>
+            </div>
+            <div class="col-md-3">
+              <select
+                class="form-select items"
+                aria-label="Default select example"
+              >
+                <option value="1">Income</option>
+                <option value="2">Expense</option>
+              </select>
+            </div>
+            <div class="col-md-3 mt-2 mt-md-0 text-md-end">
+              <div class="btn bg-success" id="addBtn">
+                <i class="bi bi-plus-square"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
